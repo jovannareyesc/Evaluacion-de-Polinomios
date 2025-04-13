@@ -38,35 +38,23 @@ int main() {
             long double* polinomio = crear_polinomio(j);
             int x = randomizer();
 
-            // Evaluacion en Horner
+            // Evaluación en Horner
             auto horner_start = chrono::high_resolution_clock::now();
             y = evaluarpolinomio_horner(polinomio, j, x);
             auto horner_end = chrono::high_resolution_clock::now();
             duration<double> horner_duration = horner_end - horner_start;
             matriz_tiempos_horner[i][j] = horner_duration.count() * 1000000000; // NOTA: CAMBIAR POR TIEMPO ESTANDAR
             tiempototal_horner += horner_duration.count() * 1000000000;
-            //cout << matriz_tiempos_horner[i][j] << endl;
-            //cout << "y: " << y << endl;
 
 
 
-            // Evaluacion en Estandar
+            // Evaluación en Estándar
             auto estandar_start = chrono::high_resolution_clock::now();
             y = evaluarpolinomio_estandar(polinomio, j, x);
             auto estandar_end = chrono::high_resolution_clock::now();
             duration<double> estandar_duration = estandar_end - estandar_start;
             matriz_tiempos_estandar[i][j] = estandar_duration.count() * 1000000000; // NOTA: CAMBIAR POR TIEMPO ESTANDAR
             tiempototal_estandar += estandar_duration.count() * 1000000000;
-            //cout << matriz_tiempos_estandar[i][j] << endl;
-            //cout << "y: " << y << endl;
-
-
-
-            //cout << endl;
-
-
-
-
 
             delete[] polinomio;
 
@@ -81,7 +69,7 @@ int main() {
         iter_aux++;
     }
 
-    // Crear archivo de evaluacion Horner
+    // Crear archivo de evaluación de Horner
     ofstream outFile_horner("evaluacion_horner.csv");
     if (!outFile_horner.is_open()) {
         cerr << "ERROR: Could not open file." << endl;
@@ -105,7 +93,7 @@ int main() {
     }
     outFile_horner.close();
 
-    // Crear archivo de evaluacion Estandar
+    // Crear archivo de evaluación Estándar
     ofstream outFile_estandar("evaluacion_estandar.csv");
     if (!outFile_estandar.is_open()) {
         cerr << "ERROR: Could not open file." << endl;
