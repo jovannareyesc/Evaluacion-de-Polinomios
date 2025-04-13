@@ -30,7 +30,7 @@ Abajo, se adjuntan los pasos a seguir para ejecutar el código exitosamente desd
 ##Resultados experimentales y gráfica comparativa
 
 
-
+![graficacomparativa](graficacomparativa.png)
 
 ##Análisis de resultados
 
